@@ -1,0 +1,496 @@
+@import "global.css";
+
+.app {
+    display: grid;
+    grid-template-columns: 51.25% 48.75%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface-secondary);
+    overflow: hidden;
+}
+
+.aside-container {
+    margin: auto;
+    padding: 4rem;
+}
+
+.aside-container h1,
+.aside-container p,
+.aside-container .logo {
+    margin-bottom: .5rem;
+}
+
+.aside-container span {
+    color: var(--text-highlight);
+}
+
+main {
+    overflow: auto;
+    padding: 4rem;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.cabecalho .voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.cabecalho .voltar a {
+    text-decoration: none;
+}
+
+.cabecalho .text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+form fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+form fieldset legend {
+    margin-bottom: 24px;
+}
+
+form fieldset div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+form fieldset div input,
+form fieldset div textarea,
+form fieldset div select,
+.date-input-wrapper input[type="date"] {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--stroke-default);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    line-height: 140%;
+    color: var(--text-tertiary);
+    font-family: var(--font-family);
+}
+
+form fieldset div input::placeholder,
+form fieldset div textarea::placeholder {
+    color: var(--text-tertiary);
+    opacity: 1;
+}
+
+form fieldset div input:not(:placeholder-shown),
+form fieldset div textarea:not(:placeholder-shown) {
+    color: var(--text-primary);
+}
+
+form fieldset div select:invalid {
+    color: var(--text-tertiary);
+}
+
+form fieldset div select:valid {
+    color: var(--text-primary);
+}
+
+form fieldset div select option:disabled {
+    color: var(--text-tertiary);
+}
+
+form fieldset div select option {
+    color: var(--text-primary);
+}
+
+form fieldset div input:focus,
+form fieldset div select:focus,
+form fieldset div textarea:focus {
+    border-color: var(--stroke-highlight);
+    outline: none;
+    box-shadow: 0 0 0 4px var(--surface-secondary);
+}
+
+form fieldset div textarea {
+    resize: vertical;
+    min-height: 9.375rem;
+    max-height: 12.5rem;
+}
+
+.date-input-wrapper {
+    position: relative;
+}
+
+.date-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.date-input-wrapper input[type="date"]:valid {
+    color: var(--text-primary);
+}
+
+.date-input-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 0.75rem;
+    top: 2.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-image: url("../assets/icons/Vector.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    cursor: pointer;
+}
+
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 0.75rem;
+    top: 2.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-image: url("../assets/icons/arrow-down-01.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.file-wrapper .drop-area {
+    border: 2px dashed var(--stroke-default);
+    border-radius: .25rem;
+    display: grid;
+    justify-items: center;
+    gap: .5rem;
+    text-align: center;
+    padding: 1.75rem 1rem;
+    position: relative;
+}
+
+.file-wrapper .drop-area:hover, 
+.file-wrapper .drop-area:has(input:focus){
+    border-width: 2px;
+    border-color: var(--stroke-highlight);
+    background-color: var(--surface-secondary);
+}
+
+.file-wrapper .drop-area:hover p {
+    color: var(--text-tertiary);
+}
+
+.file-wrapper .drop-area:hover svg path {
+    stroke: var(--stroke-highlight);
+}
+
+.file-wrapper .drop-area p {
+    color: #A8A29E;
+}
+
+.file-wrapper .drop-area input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-wrapper .drop-area:hover svg path,
+.file-wrapper .drop-area:focus-within svg path {
+    stroke: var(--text-highlight);
+}
+
+.endereco-residencial {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.endereco-residencial .residencial-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 9.375rem;
+    row-gap: 1.5rem;
+    column-gap: 1.25rem;
+    align-items: start;
+}
+
+.residencial-wrapper .numero 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"] {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.residencial-wrapper .rua, .cidade {
+    grid-column: span 1;
+}
+
+.residencial-wrapper .numero, .estado {
+    grid-column: 2/3;
+}
+
+.informacoes-do-responsavel {
+    margin-bottom: 3rem;
+}
+
+.informacoes-do-responsavel div 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"] {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.opcoes-de-matricula {
+    position: relative;
+    width: 100%;
+}
+
+.opcoes-de-matricula .turnos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.turnos .turno {
+    position: relative;
+}
+
+.turno input[type="radio"] {
+    display: none;
+}
+
+.turno label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    border: 0.125rem solid var(--stroke-default);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.turno label::before {
+    content: '';
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    width: 1.34375rem;
+    height: 1.34375rem;
+    border-radius: 50%;
+    border: 0.125rem solid var(--stroke-default);
+    background-color: transparent;
+}
+
+.turno input[type="radio"]:checked + label::before {
+    background-color: var(--text-highlight);
+    border-color: var(--text-highlight);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.turno label img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.turno label span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.turno input[type="radio"]:checked + label {
+    border-color: var(--text-highlight);
+    box-shadow: 0 0 0 4px var(--surface-secondary);
+}
+
+.turno label:hover {
+    border-color: var(--stroke-highlight);
+}
+
+.esportes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.esportes div {
+    position: relative;
+    width: 7.5rem;
+    height: 8rem;
+}
+
+.esportes div input {
+    display: none;
+}
+
+.esportes div label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 16px 16px 16px;
+    border: 2px solid var(--stroke-default);
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.esportes label::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 21.5px;
+    height: 21.5px;
+    border-radius: 50%;
+    border: 2px solid var(--stroke-default);
+    background-color: transparent;
+}
+
+.esportes input[type="radio"]:checked + label::before {
+    background-color: var(--text-highlight);
+    border-color: var(--text-highlight);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.esportes label img {
+    width: 48px;
+    height: 48px;
+}
+
+.esportes label span {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.esportes input[type="radio"]:checked + label {
+    border-color: var(--text-highlight);
+    box-shadow: 0 0 0 4px var(--surface-secondary);
+}
+
+.esportes label:hover {
+    border-color: var(--stroke-highlight);
+}
+
+.termos-wrapper {
+    margin-top: 3rem;
+    display: flex;
+    gap: .75rem;
+    align-items: flex-start;
+}
+
+.termos-wrapper span {
+    color: var(--text-highlight);
+}
+
+.checkbox-wrapper {
+    position: relative;
+}
+
+.termos {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 48px;
+}
+
+.termos input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--text-highlight);
+}
+
+.termos label {
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.botoes {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 16px;
+    padding-top: 16px;
+}
+
+.botoes input {
+    width: 174px;
+    height: 48px;
+    border: 2px solid var(--brand-dark);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 15px;
+}
+
+.botoes input[type="submit"] {
+    background-color: var(--brand-dark);
+    color: white;
+    border-color: var(--brand-dark);
+}
+
+.botoes input[type="submit"]:hover {
+    background-color: var(--brand-mid);
+    border-color: var(--brand-mid);
+    color: white;
+}
+
+.botoes input[type="button"] {
+    background-color: white;
+    color: var(--text-highlight);
+    border-color: var(--text-highlight);
+} 
+
+.botoes input[type="button"]:hover {
+    background-color: white;
+    color: var(--text-highlight);
+    border-color: var(--text-highlight);
+    box-shadow: 0 0 0 4px var(--surface-secondary);
+    
+}
