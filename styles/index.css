@@ -494,3 +494,157 @@ input[type="number"] {
     box-shadow: 0 0 0 4px var(--surface-secondary);
     
 }
+
+@media (max-width: 768px) {
+    .app {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    aside {
+        display: none;
+    }
+
+    main {
+        padding: 1.5rem;
+        overflow-y: auto;
+        height: auto;
+    }
+
+    .cabecalho {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .cabecalho .text h2 {
+        font-size: 20px;
+    }
+
+    .cabecalho .text p {
+        font-size: 14px;
+    }
+
+    form fieldset {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    form fieldset legend {
+        margin-bottom: 1.5rem;
+        font-size: 18px;
+    }
+
+    .endereco-residencial .residencial-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .residencial-wrapper .rua,
+    .residencial-wrapper .numero,
+    .residencial-wrapper .cidade,
+    .residencial-wrapper .estado {
+        grid-column: 1;
+    }
+
+    .opcoes-de-matricula .turnos {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .esportes {
+        gap: 1rem;
+        justify-content: space-between;
+    }
+
+    .esportes div {
+        width: calc(50% - 0.5rem);
+        height: auto;
+    }
+
+    .esportes div label {
+        padding: 1.5rem 1rem 1rem 1rem;
+    }
+
+    .termos-wrapper {
+        margin-top: 2rem;
+    }
+
+    .termos {
+        margin-bottom: 2rem;
+    }
+
+    .termos label {
+        font-size: 14px;
+    }
+
+    .botoes {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .botoes input {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3, legend {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 1rem;
+    }
+
+    .cabecalho .text h2 {
+        font-size: 18px;
+    }
+
+    form fieldset div input,
+    form fieldset div textarea,
+    form fieldset div select {
+        font-size: 14px;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .esportes div {
+        width: 100%;
+    }
+
+    .esportes div label {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+
+    .esportes label::before {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .esportes label img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .turno label {
+        padding: 1rem;
+    }
+
+    .turno label img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
